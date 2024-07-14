@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.user-container {
+    box-shadow: 10px 10px 20px #babecc, -10px -10px 20px #ffffff
+}
+
+/* body {
+    background: #0f0f10;
+    color: #fff;
+}
+
+imput, textarea {
+    color: #000;
+} */
