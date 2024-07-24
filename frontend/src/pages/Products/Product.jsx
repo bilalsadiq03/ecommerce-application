@@ -7,7 +7,7 @@ const Product = ({product}) => {
     <div className='w-[22rem] ml-[2rem] p-3 relative'>
         <div className='relative '>
             <img 
-                src={product.productImage} 
+                src={`http://localhost:8080/${product.productImage}`} 
                 alt={product.name}
                 className='w-full rounded h-[12rem]'
             />

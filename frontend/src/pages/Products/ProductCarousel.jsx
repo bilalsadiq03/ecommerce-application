@@ -29,7 +29,7 @@ const ProductCarousel = () => {
   };
 
   return (
-    <div className="mb-4 xl:block lg:block md:block">
+    <div className="mb-4 xl:block lg:block md:block ">
       {isLoading ? null : error ? (
         <Message variant="danger">
           {error?.data?.message || error.message}
@@ -52,11 +52,13 @@ const ProductCarousel = () => {
               stock,
             }) => (
               <div key={_id}>
-                <img
-                  src={productImage}
-                  alt={name}
-                  className="w-full rounded-lg object-cover h-[20rem] mb-2"
-                />
+                <div>
+                  <img
+                    src={`http://localhost:8080/${productImage}`}
+                    alt={name}
+                    className="w-full rounded-lg object-cover h-[20rem] mb-2"
+                  />
+                </div>
                 <div className="flex justify-between">
                   <div className="one w-1/2">
                     <h2 className="text-lg font-semibold">{name}</h2>

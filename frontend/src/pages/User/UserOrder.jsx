@@ -36,7 +36,7 @@ const UserOrder = () => {
             {orders.map((order) => (
               <tr key={order._id}>
                 <img
-                  src={order.orderItems[0].productImage}
+                  src={`http://localhost:8080/${order.orderItems[0].productImage}`}
                   alt={order.user}
                   className="w-[6rem] mb-5"
                 />

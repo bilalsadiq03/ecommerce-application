@@ -164,7 +164,7 @@ exports.calculateTotalSalesByDate = async(req, res) => {
 
 exports.getOrderById =  async (req, res) => {
     try {
-        const order = await order_model.findById(req.params.id);
+        const order = await order_model.findById(req.params.id).populate('user', 'name email');
         if (order){
           res.status(201).send(order)
         } else {

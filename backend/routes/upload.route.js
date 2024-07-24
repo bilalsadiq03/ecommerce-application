@@ -4,13 +4,12 @@ const multer = require('multer')
 
 const storage =  multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/')
+        cb(null, './uploads/')
     },
 
     filename: (req, file, cb  ) => {
         const extname = path.extname(file.originalname)
-        const basename = path.basename(file.originalname, extname)
-        cb(null, `${basename}-${Date.now()}${extname}`)
+        cb(null, `${file.fieldname}-${Date.now()}${extname}`)
     }
 })
 
@@ -26,8 +25,6 @@ const fileFilter = (req, file, cb) => {
     } else {
         cb(new Error("Images only"), false)
     }
-
-
 }
 
 const upload =  multer ({storage, fileFilter})
@@ -41,7 +38,7 @@ module.exports = (app) => {
             } else if (req.file) {
                 res.status(200).send({
                     message: "Image uploaded successfully",
-                    productImage: `/uploads/${req.file.filename}`
+                    productImage: `${req.file.path}`
                 })
             } else {
                 res.status(400).send({message: "No image file provided"})

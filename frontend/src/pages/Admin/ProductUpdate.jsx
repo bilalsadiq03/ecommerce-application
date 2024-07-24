@@ -40,37 +40,22 @@ const ProductUpdate = () => {
       }
     }, [productData])
 
-  // const uploadFileHandler = async(e) => {
-  //     const formData = new FormData()
-  //     formData.append('productImage', e.target.files[0])
-
-  //     try {
+  const uploadFileHandler = async(e) => {
+      const formData = new FormData()
+      formData.append('productImage', e.target.files[0])
+      
+      try {
             
-  //       const res = await uploadProductImage(formData).unwrap()
-  //       console.log(res)
-  //       toast.success(res.message);
-  //       setProductImage(res.productImage)
-  //     } catch (error) {
-  //         toast.error(error?.data?.message || error.error || "An error occurred")
-  //       } 
-  // }
-
-  function uploadFileHandler (ev) {
-    const files = ev.target.files;
-    const data = new FormData();
-    for  (let i=0; i<files.length; i++) {
-      data.append('photos', files[i]);
-    }
-    axios.post('/upload', data, {
-      headers: {'Content-Type': 'multipart/form-data'}
-    }).then(response => {
-      const {data: filenames} = response;
-      setAddedPhotos(prev => {
-        return [...prev, ...filenames ];
-      });
-    })
-    console.log(data)
+        const res = await uploadProductImage(formData).unwrap()
+        console.log(res)
+        toast.success(res.message);
+        setProductImage(res.productImage)
+      } catch (error) {
+          toast.error(error?.data?.message || error.error || "An error occurred")
+        } 
   }
+
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -121,7 +106,7 @@ const ProductUpdate = () => {
         {productImage && (
           <div className="text-center">
             <img
-              src={productImage}
+              src={`http://localhost:8080/${productImage}`}
               alt="Error Loading Image..."
               className="block mx-auto max-h-[200px] p-4"
             />

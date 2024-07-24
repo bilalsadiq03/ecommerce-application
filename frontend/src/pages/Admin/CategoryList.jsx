@@ -70,10 +70,10 @@ const CategoryList = () => {
 
 
   return (
-    <div className='ml-[15rem] flex flex-col md:flex-row'>
+    <div className='ml-16 flex flex-col md:flex-row'>
         <AdminMenu />
         <div className='md:w-3/4 p-3'>
-            <div className='h-12'>Manage Categories</div>
+            <div className='h-12 font-semibold'>Manage Categories</div>
             <CategoryForm 
                 value={name} 
                 setValue={setName}

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const OrderList = () => {
 
     const {data: orders, isLoading, error} = useGetOrdersQuery()
-    // console.log(orders[0].user)
+    
 
 
 
@@ -41,7 +41,7 @@ const OrderList = () => {
               <tr key={order._id}>
                 <td>
                   <img
-                    src={order.orderItems[0].productImage}
+                    src={`http://localhost:8080/${order.orderItems[0].productImage}`}
                     alt={order._id}
                     className="w-[5rem] pt-4"
                   />

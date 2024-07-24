@@ -75,7 +75,8 @@ require("./routes/upload.route.js")(app)
 
 
 // for uploading image files
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+app.use("/uploads", express.static(path.join( __dirname  + "/uploads")));
 
 // Starting the Server...
 app.listen(server_config.PORT, ()=>{

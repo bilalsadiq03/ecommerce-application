@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 import Loader from '../../components/Loader'
 import { setCredentials } from '../../redux/features/auth/authSlice'
 import { Link } from 'react-router-dom'
-import { useProfileMutation } from '../../redux/api/usersApiSlice'
+import { useProfileMutation, useUpdateUserMutation } from '../../redux/api/usersApiSlice'
 
 const Profile = () => {
 
@@ -16,7 +16,7 @@ const Profile = () => {
 
     const {userInfo} = useSelector(state => state.auth)
 
-    const [updateProfile, {isLoading: loadingUpdateProfile}] = useProfileMutation()
+    const [updateProfile, {isLoading: loadingUpdateProfile}] = useUpdateUserMutation()
 
     useEffect(() => {
         setName(userInfo.name)
@@ -42,8 +42,8 @@ const Profile = () => {
         <div className="md:w-1/3">
           <h2 className="text-2xl font-semibold mb-4">My Profile</h2>
           <form onSubmit={submitHandler}>
-            <div className="mb-2">
-              <label className="block text-white mb-2">Name</label>
+            <div className="mb-4">
+              <label className="block mb-2 font-semibold">Name</label>
               <input
                 type="text"
                 placeholder="Enter name"
@@ -53,8 +53,8 @@ const Profile = () => {
               />
             </div>
 
-            <div className="mb-2">
-              <label className="block text-white mb-2">Email Address</label>
+            <div className="mb-4">
+              <label className="block mb-2 font-semibold">Email Address</label>
               <input
                 type="email"
                 placeholder="Enter email"
@@ -65,7 +65,7 @@ const Profile = () => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-white mb-2">Password</label>
+              <label className="block mb-2 font-semibold">Password</label>
               <input
                 type="password"
                 placeholder="Enter password"

@@ -17,10 +17,12 @@ const Order = () => {
    
     const {id: orderId} = useParams();
     const {data: order, refetch, isLoading, error} = useGetOrderDetailsQuery(orderId)
+    console.log(order)
 
     const [payOrder, {isLoading: loadingPay}] = usePayOrderMutation()
     const [deliverOrder, {isLoading: loadingDeliver}] = useDeliverOrderMutation()
     const {userInfo} = useSelector((state) => state.auth)
+    console.log(userInfo)
 
     const [{isPending}, paypalDispatch] = usePayPalScriptReducer()
 
@@ -107,7 +109,8 @@ const Order = () => {
                         <tr key={index}>
                           <td className="p-2">
                             <img
-                              src={item.productImage}
+                              // src={item.productImage}
+                              src={`http://localhost:8080/${item.productImage}`}
                               alt={item.name}
                               className="w-16 h-16 object-cover"
                             />
