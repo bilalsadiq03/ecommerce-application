@@ -9,6 +9,7 @@ const db_config = require("./configs/db.config.js")
 const user_model = require("./models/user.model.js")
 const bcrypt = require("bcryptjs")
 const cookieParser = require("cookie-parser")
+require('dotenv').config();
 
 
 app.use(express.json())
@@ -79,6 +80,6 @@ require("./routes/upload.route.js")(app)
 app.use("/uploads", express.static(path.join( __dirname  + "/uploads")));
 
 // Starting the Server...
-app.listen(server_config.PORT, ()=>{
-    console.log(`Server started at  http://localhost:${server_config.PORT}`)
+app.listen(process.env.PORT, ()=>{
+    console.log(`Server started at  http://localhost:${process.env.PORT}`)
 })

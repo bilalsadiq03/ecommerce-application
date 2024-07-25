@@ -32,7 +32,7 @@ const AllProducts = () => {
               >
                 <div className="flex">
                   <img
-                    src={`http://localhost:8080/${product.productImage}`}
+                    src={`/api/${product.productImage}`}
                     alt={product.name}
                     className="w-[10rem] object-cover"
                   />

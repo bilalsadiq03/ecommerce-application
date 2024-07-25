@@ -85,10 +85,10 @@ const ProductDetails = () => {
         </Message>
       ) : (
         <>
-        <div className="flex relative items-between mt-[2rem] ml-14 w-full">
+        <div className="flex relative items-between mt-[2rem] right-0">
             <div>
               <img
-                src={`http://localhost:8080/${product.productImage}`}
+                src={`/api/${product.productImage}`}
                 alt={product.name}
                 className="w-full xl:w-[40rem] lg:w-[40rem] md:w-[30rem] sm:w-[20rem] mr-[2rem]"
               />

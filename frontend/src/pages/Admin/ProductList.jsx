@@ -83,7 +83,7 @@ const ProductList = () => {
         {imageUrl && (
           <div className="text-center">
             <img
-              src={`http://localhost:8080/${imageUrl}`}
+              src={`/api/${imageUrl}`}
               alt="Error loading image..."
               className="block mx-auto max-h-[200px]"
             />

@@ -84,7 +84,7 @@ exports.createOrder = async (req, res) => {
 exports.getAllOrders = async (req, res) => {
 
   try {
-    const orders = await order_model.find({}).populate('user', 'id');
+    const orders = await order_model.find({}).populate('user', 'name id');
     res.status(201).send(orders);
   } catch (error) {
     console.log("Error getting all orders ", error);
@@ -190,7 +190,7 @@ exports.markOrderAsPaid = async (req, res) => {
         id: req.body.id,
         status: req.body.status,
         update_time: req.body.update_time,
-        email_address: req.body.payer.email_address,
+        email: req.body.payer.email,
       };
 
       const updateOrder = await order_model.save();

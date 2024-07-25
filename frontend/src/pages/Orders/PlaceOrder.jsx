@@ -71,7 +71,7 @@ const PlaceOrder = () => {
                     <tr key={index}>
                       <td className="p-2">
                         <img
-                          src={item.productImage}
+                          src={`/api/${item.productImage}`}
                           alt={item.name}
                           className="w-16 h-16 object-cover"
                         />

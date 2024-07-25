@@ -54,7 +54,7 @@ const ProductCarousel = () => {
               <div key={_id}>
                 <div>
                   <img
-                    src={`http://localhost:8080/${productImage}`}
+                    src={`/api/${productImage}`}
                     alt={name}
                     className="w-full rounded-lg object-cover h-[20rem] mb-2"
                   />

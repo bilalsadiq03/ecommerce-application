@@ -59,6 +59,9 @@ export const orderApiSlice = apiSlice.injectEndpoints({
             query: ({orderId}) => ({
                 url: `/api/v1/auth/order/${orderId}/deliver`,
                 method:"PUT",
+                headers: {
+                    'x-access-token': token
+                },
             })
         }),
 

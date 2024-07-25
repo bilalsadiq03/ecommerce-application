@@ -17,7 +17,7 @@ const CategoryList = () => {
     const [name, setName] = useState('')
     const [selectedCategory, setSelectedCategory] = useState(null)
     const [updatingName, setUpdatingName] = useState('')
-    const [modalVisible, setModalVisible] = useState(false)
+    const [modalVisible, setModalVisible] = useState(true)
 
     const [createCategory] = useCreateCategoryMutation()
     const [updateCategory] = useUpdateCategoryMutation()
@@ -100,16 +100,16 @@ const CategoryList = () => {
             </div>
           ))}
         </div>
-            {/* Fixing this after completion */}
-            {/* <Modal isOpen={modalVisible} onClose={() => setModalVisible(false)}>
-                <CategoryForm
-                  value={updatingName}
-                  setValue={value => setUpdatingName(value)}
-                  handleSubmit={handleUpdateCategory}
-                  buttonText='Update'
-                //handleDelete={handleDeleteCategory}
-                />
-            </Modal> */}
+            
+        {/* <Modal isOpen={modalVisible} onClose={() => setModalVisible(false)}>
+          <CategoryForm
+            value={updatingName}
+            setValue={(value) => setUpdatingName(value)}
+            handleSubmit={handleUpdateCategory}
+            buttonText="Update"
+            // handleDelete={handleDeleteCategory}
+          />
+        </Modal> */}
         </div>
     </div>
   )

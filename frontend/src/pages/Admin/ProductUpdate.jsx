@@ -106,7 +106,7 @@ const ProductUpdate = () => {
         {productImage && (
           <div className="text-center">
             <img
-              src={`http://localhost:8080/${productImage}`}
+              src={`/api/${productImage}`}
               alt="Error Loading Image..."
               className="block mx-auto max-h-[200px] p-4"
             />

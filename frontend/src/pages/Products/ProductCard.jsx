@@ -35,7 +35,7 @@ const ProductCard = ({p}) => {
 
           <img
             className="cursor-pointer w-full"
-            src={`http://localhost:8080/${p.productImage}`}
+            src={`/api/${p.productImage}`}
             alt={p.name}
             style={{ height: "170px", objectFit: "cover" }}
           />

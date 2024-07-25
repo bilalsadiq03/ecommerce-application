@@ -16,13 +16,14 @@ import {
 const Order = () => {
    
     const {id: orderId} = useParams();
+
     const {data: order, refetch, isLoading, error} = useGetOrderDetailsQuery(orderId)
     console.log(order)
 
     const [payOrder, {isLoading: loadingPay}] = usePayOrderMutation()
     const [deliverOrder, {isLoading: loadingDeliver}] = useDeliverOrderMutation()
     const {userInfo} = useSelector((state) => state.auth)
-    console.log(userInfo)
+    
 
     const [{isPending}, paypalDispatch] = usePayPalScriptReducer()
 
@@ -109,8 +110,7 @@ const Order = () => {
                         <tr key={index}>
                           <td className="p-2">
                             <img
-                              // src={item.productImage}
-                              src={`http://localhost:8080/${item.productImage}`}
+                              src={`/api/${item.productImage}`}
                               alt={item.name}
                               className="w-16 h-16 object-cover"
                             />
@@ -210,7 +210,7 @@ const Order = () => {
               <div>
                 <button
                   type="button"
-                  className="bg-pink-500 text-white w-full py-2"
+                  className="bg-pink-500 w-full py-2"
                   onClick={deliverHandler}
                 >
                   Mark As Delivered
