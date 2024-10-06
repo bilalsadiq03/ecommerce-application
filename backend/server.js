@@ -80,6 +80,6 @@ require("./routes/upload.route.js")(app)
 app.use("/uploads", express.static(path.join( __dirname  + "/uploads")));
 
 // Starting the Server...
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT || 8080, ()=>{
     console.log(`Server started at  http://localhost:${process.env.PORT}`)
 })
