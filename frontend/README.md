@@ -39,8 +39,13 @@ This is a full-stack e-commerce application built using the MERN stack (MongoDB,
        cd frontend
        npm install
 
+<<<<<<< HEAD
      - Navigate to backend folder and install backend dependencies:
      ```bash
+=======
+  - Navigate to backend folder and install backend dependencies:
+    ```bash
+>>>>>>> ac5d6022a2143579761144615adad752e4270ca1
        cd backend
        npm install
 
@@ -50,7 +55,11 @@ This is a full-stack e-commerce application built using the MERN stack (MongoDB,
        cd backend
        node server.js
      
+<<<<<<< HEAD
    - Start the frontend:
+=======
+  - Start the frontend:
+>>>>>>> ac5d6022a2143579761144615adad752e4270ca1
      ```bash
        cd frontend
        npm run dev
