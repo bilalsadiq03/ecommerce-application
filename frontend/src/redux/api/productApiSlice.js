@@ -2,7 +2,6 @@ import { apiSlice } from './apiSlice'
 
 
 const token = localStorage.getItem('token')
-console.log(token)
 
 export const productApiSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
@@ -99,7 +98,6 @@ export const productApiSlice = apiSlice.injectEndpoints({
 
     })
 })
-
 
 export const {
     useAllProductsQuery,

@@ -7,7 +7,7 @@ export const addFavoriteToLocalStorage = (product) => {
     }
 };
   
-  // Remove  product from a localStorage
+// Remove  product from a localStorage
 export const removeFavoriteFromLocalStorage = (productId) => {
     const favorites = getFavoritesFromLocalStorage();
     const updateFavorites = favorites.filter(
@@ -17,7 +17,7 @@ export const removeFavoriteFromLocalStorage = (productId) => {
     localStorage.setItem("favorites", JSON.stringify(updateFavorites));
 };
   
-  // Retrive favorites from a localStorage
+// Retrive favorites from a localStorage
 export const getFavoritesFromLocalStorage = () => {
     const favoritesJSON = localStorage.getItem("favorites");
     return favoritesJSON ? JSON.parse(favoritesJSON) : [];

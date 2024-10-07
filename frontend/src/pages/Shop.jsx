@@ -11,7 +11,7 @@ import {
 
 import Loader from '../components/Loader'
 import ProductCard from "./Products/ProductCard";
-// import ProductCard from './Products/'
+
 
 
 const Shop = () => {
@@ -21,11 +21,9 @@ const Shop = () => {
     
 
     const categoriesQuery = useFetchCategoriesQuery()
-    // console.log(categoriesQuery.data)
     const [priceFilter, setPriceFilter] = useState('')
 
     const filteredProductsQuery = useGetFilteredProductsQuery({checked, radio})
-    // console.log(filteredProductsQuery.data)
 
 
     useEffect(() => {
@@ -38,7 +36,6 @@ const Shop = () => {
     useEffect(() => {
         if (!checked.length || !radio.length) {
           if (!filteredProductsQuery.isLoading) {
-            // Filter products based on both checked categories and price filter
             const filteredProducts = filteredProductsQuery.data.filter(
               (product) => {
                 // Check if the product price includes the entered price filter value
@@ -60,7 +57,6 @@ const Shop = () => {
       }
 
       const handlePriceChange = (e) => {
-        // Update the price filter state when the user types in the input filed
         setPriceFilter(e.target.value);
       };
     

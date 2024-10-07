@@ -25,6 +25,7 @@ const initialState = {
             state.radio = action.payload;
         },
     }
+    
 });
 
 export const { setCategories, setProducts, setRadio, setChecked} = shopSlice.actions;

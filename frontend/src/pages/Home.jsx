@@ -34,16 +34,16 @@ const Home = () => {
                 >
                     Shop
                 </Link>
-                </div>
+            </div>
             
-                <div className="flex justify-center flex-wrap mt-2">
-                    { data.map((product) => (
-                        <div key={product._id}>
-                            <Product product={product} />
-                        </div>
-                        ))
-                    }
-                </div>
+            <div className="flex justify-center flex-wrap mt-2">
+                { data.map((product) => (
+                    <div key={product._id}>
+                        <Product product={product} />
+                    </div>
+                    ))
+                }
+            </div>
 
             
         </>

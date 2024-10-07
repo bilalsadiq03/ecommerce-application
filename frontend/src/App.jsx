@@ -4,7 +4,7 @@ import './App.css'
 import Navigation from './pages/Auth/Navigation.jsx'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
-// import Footer from './components/Footer.jsx'
+
 
 function App() {
   
@@ -16,7 +16,6 @@ function App() {
     <main className='py-3'>
       <Outlet />
     </main>
-    {/* <Footer /> */}
     </>
   )
 }

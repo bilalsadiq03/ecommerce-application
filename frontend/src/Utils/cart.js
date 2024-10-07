@@ -25,4 +25,5 @@ export const addDecimals = (num) => {
     localStorage.setItem("cart", JSON.stringify(state));
   
     return state;
+    
   };
