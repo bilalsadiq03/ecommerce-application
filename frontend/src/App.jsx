@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
-import './App.css'
 import Navigation from './pages/Auth/Navigation.jsx'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
