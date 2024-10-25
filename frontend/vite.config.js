@@ -8,10 +8,11 @@ export default defineConfig({
     host: true, 
     proxy: {
       '/api': {
-
+<<<<<<< HEAD
+        target: 'http://localhost:8080', 
+=======
         target: 'https://ecommerce-backend-xsmz.onrender.com', 
-
-        changeOrigin: true,
+>>>>>>> adb9fa60f5ec115ba9c1890b1d0549ff0b61dc75
         rewrite: (path) => path.replace(/^\/api/, ''),
       },      
     },
